@@ -20,6 +20,17 @@ namespace senai_wish.webApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors(options => {
+                options.AddPolicy("CorsPolicy",
+                builder => {
+                    builder.WithOrigins("http://localhost:3000")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+
+                }
+                );
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Wish.webApi", Version = "v1" });
@@ -52,6 +63,7 @@ namespace senai_wish.webApi
             }
 
             app.UseRouting();
+            app.UseCors("CorsPolicy");
 
             app.UseEndpoints(endpoints =>
             {

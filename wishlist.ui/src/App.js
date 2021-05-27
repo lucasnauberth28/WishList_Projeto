@@ -8,13 +8,13 @@ class App extends Component{
     super(props);
     this.state = {
         listaDesejos : [],
-        titulo : ''
+        descricao : ''
     }
   };
 
 buscarDesejos = () =>{
   // Faz a chamada para a api usando o fetch
-  fetch('http://localhost:5000/api/')
+  fetch('http://localhost:5000/api/Desejo')
 
   // Define o tipo de dado do retorno da requisição(JSON)
   .then(resposta => resposta.json())
@@ -28,7 +28,11 @@ buscarDesejos = () =>{
 
 }
 
-
+  // Chama a função buscarTiposEventos() assim que o componente é renderizado
+  componentDidMount(){
+    this.buscarDesejos();
+    
+}
 
 
   render() {
@@ -45,32 +49,52 @@ buscarDesejos = () =>{
         </header> 
         {/* Fim do Cabeçalho */}
         {/* Lista de Desejos  */}
+<main>
         <section className="ListaDesejos">
-          {/* Título Lista de Desejos */}
-          <h2 className="title">Lista de Desejos</h2>
-          {/* div para guardar as caixas das listas */}
-          <div className="boxes">
-            {/* Lista1 */}
-            <div className="box">
-              <p className="texto">{Desejo}</p>
-              <p className="texto">{NomedeUsuário}</p>
-            </div>
+        <table>
+             <thead>
+               <tr>
+                 <th>id</th>
+                 <th>Desejo</th>
+               </tr>
+             </thead>
+             <tbody>
+
+             {this.state.listaDesejos.map((desejo) => {
+         return(   
+           
+              /* Título Lista de Desejos */
+          // <h2 className="title">Lista de Desejos</h2>
+         
+          //* div para guardar as caixas das listas */
+          <div>
+          <tr key={desejo.idDesejo}></tr>
+              <td>{desejo.idDesejo}</td>
+              <p>{desejo.descricao}</p>
+            
             {/* Lista2 */}
             <div className="box">
-              <p className="texto">{Desejo}</p>
-              <p className="texto">{NomedeUsuário}</p>
+              <p className="texto">{desejo.Desejo}</p>
+              <p className="texto">{desejo.NomedeUsuário}</p>
             </div>
             {/* Lista3 */}
             <div className="box">
-              <p className="texto">{Desejo}</p>
-              <p className="texto">{NomedeUsuário}</p>
+              <p className="texto">{desejo.Desejo}</p>
+              <p className="texto">{desejo.NomedeUsuário}</p>
             </div>
             {/* Lista4 */}
             <div className="box">
-              <p className="texto">{Desejo}</p>
-              <p className="texto">{NomedeUsuário}</p>
+              <p className="texto">{desejo.Desejo}</p>
+              <p className="texto">{desejo.NomedeUsuário}</p>
             </div>
           </div>
+         )    
+          })}
+             </tbody>
+           </table>
+            
+          
+        
         </section> {/*Fim da seção Listar desejos*/}
         {/* Div criada para separar as seções */}
         <div className="header" />
@@ -92,6 +116,7 @@ buscarDesejos = () =>{
         <section className="header" />
         <section className="header" />
         <section className="header" /> 
+        </main>
       </div>
     );
  } };
