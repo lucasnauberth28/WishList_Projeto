@@ -57,10 +57,20 @@ body{
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    display: flex;
-    width: 800px;
-    height: 80vh;
+    display: grid;
+    width: 300px;
+    height: 100px;
+
 }
+/* .boxemaior{
+  
+  display: grid;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 1000px;
+  height: 80vh;
+} */
 
 .title{
     color: var(--background);

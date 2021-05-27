@@ -51,15 +51,8 @@ buscarDesejos = () =>{
         {/* Lista de Desejos  */}
 <main>
         <section className="ListaDesejos">
-        <table>
-             <thead>
-               <tr>
-                 <th>id</th>
-                 <th>Desejo</th>
-               </tr>
-             </thead>
-             <tbody>
-
+        <h2 className="title">Lista de Desejos</h2>
+             
              {this.state.listaDesejos.map((desejo) => {
          return(   
            
@@ -67,31 +60,22 @@ buscarDesejos = () =>{
           // <h2 className="title">Lista de Desejos</h2>
          
           //* div para guardar as caixas das listas */
-          <div>
+        <div className="boxemaior">
+        <div className="boxes">
+            <div className="box">
           <tr key={desejo.idDesejo}></tr>
-              <td>{desejo.idDesejo}</td>
-              <p>{desejo.descricao}</p>
+              <p className="texto">{desejo.idDesejo}</p>
+              <p className="texto">{desejo.descricao}</p>
+              </div>
+           
             
-            {/* Lista2 */}
-            <div className="box">
-              <p className="texto">{desejo.Desejo}</p>
-              <p className="texto">{desejo.NomedeUsuário}</p>
-            </div>
-            {/* Lista3 */}
-            <div className="box">
-              <p className="texto">{desejo.Desejo}</p>
-              <p className="texto">{desejo.NomedeUsuário}</p>
-            </div>
-            {/* Lista4 */}
-            <div className="box">
-              <p className="texto">{desejo.Desejo}</p>
-              <p className="texto">{desejo.NomedeUsuário}</p>
-            </div>
+          
+          </div>
           </div>
          )    
           })}
-             </tbody>
-           </table>
+             
+           
             
           
         
