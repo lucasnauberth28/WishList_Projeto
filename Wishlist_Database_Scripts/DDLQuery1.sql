@@ -1,0 +1,23 @@
+CREATE DATABASE Wish
+GO
+
+USE Wish
+GO
+
+CREATE TABLE Usuario
+(
+	idUsuario INT PRIMARY KEY IDENTITY
+	,nome VARCHAR(30) NOT NULL
+	,email VARCHAR(40) NOT NULL UNIQUE
+	,senha VARCHAR(255) NOT NULL
+)
+GO
+CREATE TABLE Desejo 
+(
+	idDesejo INT PRIMARY KEY IDENTITY
+	,idUsuario INT FOREIGN KEY REFERENCES Usuario(idUsuario)
+	,nomeDesejo VARCHAR (50) NOT NULL
+	,descricao VARCHAR (300)
+	,dataCriacaoDesejo DATE NOT NULL
+)
+GO

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>senai_wish.webApi</name>
+    </assembly>
+    <members>
+        <member name="M:senai_wish.webApi.Controllers.DesejoController.Get">
+            <summary>
+            Lista todos os desejos
+            </summary>
+            <returns>Uma lista de desejos</returns>
+        </member>
+        <member name="M:senai_wish.webApi.Controllers.DesejoController.Post(senai_wish.webApi.Domains.Desejo)">
+            <summary>
+            Cadastra um novo desejo
+            </summary>
+            <param name="novoDesejo">Parâmetro novoDesejo que recebe as informações do desejo a ser cadastrado</param>
+            <returns>Um Status Code - 201</returns>
+        </member>
+    </members>
+</doc>
