@@ -1,0 +1,32 @@
+{
+	"info": {
+		"_postman_id": "1c2d6539-e9d4-4992-9a94-4616b9434ee8",
+		"name": "SENAI_Wish_WebAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Desejo",
+			"item": [
+				{
+					"name": "Desejo.ListarTodos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Desejo.Cadastrar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
