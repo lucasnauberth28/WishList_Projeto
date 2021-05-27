@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\caicm\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\caicm\\.nuget\\packages"
+      "C:\\Users\\Saga\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Saga\\.nuget\\packages"
     ]
   }
 }

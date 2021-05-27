@@ -7522,19 +7522,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\caicm\\.nuget\\packages\\": {}
+    "C:\\Users\\Saga\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\caicm\\OneDrive\\Área de Trabalho\\WishList_Projeto\\Wishlist.webApi\\senai_wish.webApi\\senai_wish.webApi\\senai_wish.webApi.csproj",
+      "projectUniqueName": "C:\\Users\\Saga\\Desktop\\Projeto\\WishList_Projeto\\Wishlist.webApi\\senai_wish.webApi\\senai_wish.webApi\\senai_wish.webApi.csproj",
       "projectName": "senai_wish.webApi",
-      "projectPath": "C:\\Users\\caicm\\OneDrive\\Área de Trabalho\\WishList_Projeto\\Wishlist.webApi\\senai_wish.webApi\\senai_wish.webApi\\senai_wish.webApi.csproj",
-      "packagesPath": "C:\\Users\\caicm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\caicm\\OneDrive\\Área de Trabalho\\WishList_Projeto\\Wishlist.webApi\\senai_wish.webApi\\senai_wish.webApi\\obj\\",
+      "projectPath": "C:\\Users\\Saga\\Desktop\\Projeto\\WishList_Projeto\\Wishlist.webApi\\senai_wish.webApi\\senai_wish.webApi\\senai_wish.webApi.csproj",
+      "packagesPath": "C:\\Users\\Saga\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Saga\\Desktop\\Projeto\\WishList_Projeto\\Wishlist.webApi\\senai_wish.webApi\\senai_wish.webApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\caicm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Saga\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
