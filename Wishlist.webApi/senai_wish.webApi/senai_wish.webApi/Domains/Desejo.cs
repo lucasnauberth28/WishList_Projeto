@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -13,6 +14,9 @@ namespace senai_wish.webApi.Domains
         }
 
         public int IdDesejo { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime dataCriacaoDesejo { get; set; }
         public string NomeDesejo { get; set; }
         public string Descricao { get; set; }
 
