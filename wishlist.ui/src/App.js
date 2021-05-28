@@ -8,7 +8,8 @@ class App extends Component{
     super(props);
     this.state = {
         listaDesejos : [],
-        descricao : ''
+        nome : '',
+        date: ''
     }
   };
 
@@ -26,6 +27,41 @@ buscarDesejos = () =>{
   .catch(erro => console.log(erro))
   
 
+}
+
+cadastrarDesejos = (event) =>{
+      event.preventDefault();
+
+      fetch('http://localhost:5000/api/Desejo',
+      {
+         // Define o metodo da resquisição (PoST)
+         method : 'POST', 
+
+         // Define o corpo da requisição especificando o tipo (JSON)
+         // Em outras palavras, converte o state para uma string JSON
+         body : JSON.stringify( {nomeDesejo : this.state.nome}),
+
+         // Define o cabeçalho da requisição
+         headers : {
+             "Content-Type" : "application/json"
+         }
+      })
+
+      .then(console.log("Desejo cadastrado"))
+      .catch(erro => console.log(erro))
+
+      .then(this.buscarDesejos)
+}
+
+atualizarEstadoDescricao = async (event) => {
+        await this.setState({nome : event.target.value})
+        console.log(this.state.nome)
+
+}
+
+atualizarEstadoDate = async (event) => {
+    await this.setState({date : event.target.value})
+    console.log(this.state.date)
 }
 
   // Chama a função buscarTiposEventos() assim que o componente é renderizado
@@ -65,7 +101,7 @@ buscarDesejos = () =>{
             <div className="box">
           <tr key={desejo.idDesejo}></tr>
               <p className="texto">{desejo.idDesejo}</p>
-              <p className="texto">{desejo.descricao}</p>
+              <p className="texto">{desejo.nomeDesejo}</p>
               </div>
            
             
@@ -88,11 +124,12 @@ buscarDesejos = () =>{
           <h2 className="title"> Cadastro de Desejos</h2>
           {/* Form para os inputs email e desejo */}
           <form className="form">
-            <input type="text" className="input" placeholder="Digite o seu email" />
-            <input type="text" className="input" placeholder="Digite seu desejo" />
+            <input type="text" value={this.state.date} onChange={this.atualizarEstadoDate}className="input" placeholder="Digite o seu email" />
+            <input type="text" className="input" value={this.state.nome} onChange={this.atualizarEstadoDescricao} placeholder="Digite seu desejo" />
+            <button type="submit" className="btn" onClick={this.cadastrarDesejos}>Cadastrar</button>
           </form>
           {/* Botão para cadastro */}
-          <button type="submit" className="btn" onclick="botao">Cadastrar</button>
+          
           {/* Fim da seção Cadastro de desejos */}
         </section>
         {/* Divs para espaçamento final */}
