@@ -37,32 +37,43 @@ namespace senai_wish.webApi.Contexts
             modelBuilder.Entity<Desejo>(entity =>
             {
                 entity.HasKey(e => e.IdDesejo)
-                    .HasName("PK__Desejo__5DB1341F2BEFDF32");
+                    .HasName("PK__Desejo__5DB1341FA6B14670");
 
                 entity.ToTable("Desejo");
 
                 entity.Property(e => e.IdDesejo).HasColumnName("idDesejo");
+
+                entity.Property(e => e.DataCriacaoDesejo)
+                    .HasColumnType("date")
+                    .HasColumnName("dataCriacaoDesejo");
 
                 entity.Property(e => e.Descricao)
                     .HasMaxLength(300)
                     .IsUnicode(false)
                     .HasColumnName("descricao");
 
+                entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
+
                 entity.Property(e => e.NomeDesejo)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("nomeDesejo");
+
+                entity.HasOne(d => d.IdUsuarioNavigation)
+                    .WithMany(p => p.Desejos)
+                    .HasForeignKey(d => d.IdUsuario)
+                    .HasConstraintName("FK__Desejo__idUsuari__398D8EEE");
             });
 
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__Usuario__645723A6FD22823F");
+                    .HasName("PK__Usuario__645723A6AD310100");
 
                 entity.ToTable("Usuario");
 
-                entity.HasIndex(e => e.Email, "UQ__Usuario__AB6E61641B7862B2")
+                entity.HasIndex(e => e.Email, "UQ__Usuario__AB6E6164C30DC51F")
                     .IsUnique();
 
                 entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
@@ -72,8 +83,6 @@ namespace senai_wish.webApi.Contexts
                     .HasMaxLength(40)
                     .IsUnicode(false)
                     .HasColumnName("email");
-
-                entity.Property(e => e.IdDesejo).HasColumnName("idDesejo");
 
                 entity.Property(e => e.Nome)
                     .IsRequired()
@@ -86,11 +95,6 @@ namespace senai_wish.webApi.Contexts
                     .HasMaxLength(255)
                     .IsUnicode(false)
                     .HasColumnName("senha");
-
-                entity.HasOne(d => d.IdDesejoNavigation)
-                    .WithMany(p => p.Usuarios)
-                    .HasForeignKey(d => d.IdDesejo)
-                    .HasConstraintName("FK__Usuario__idDesej__412EB0B6");
             });
 
             OnModelCreatingPartial(modelBuilder);

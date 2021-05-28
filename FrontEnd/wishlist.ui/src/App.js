@@ -106,7 +106,7 @@ atualizarEstadoDate = async (event) => {
         <div className="boxes">
             <div className="box">
           <tr key={desejo.idDesejo}></tr>
-              <p className="texto">{desejo.idDesejo}</p>
+              <p className="texto">{desejo.idUsuarioNavigation.nome}</p>
               <p className="texto">{desejo.nomeDesejo}</p>
               <p className="texto">{desejo.dataCriacaoDesejo}</p>
               </div>

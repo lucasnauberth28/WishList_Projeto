@@ -1,4 +1,5 @@
-﻿using senai_wish.webApi.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using senai_wish.webApi.Contexts;
 using senai_wish.webApi.Domains;
 using senai_wish.webApi.Interfaces;
 using System;
@@ -20,7 +21,7 @@ namespace senai_wish.webApi.Repositories
 
         public List<Desejo> Listar()
         {
-            return ctx.Desejos.ToList();
+            return ctx.Desejos.Include(n => n.IdUsuarioNavigation).ToList();
         }
     }
 }
