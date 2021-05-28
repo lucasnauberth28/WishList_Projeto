@@ -3,15 +3,21 @@ import SweetAlert from "sweetalert2";
 
 import './App.css';
 
+function DataFormatada(props) {
+  return new Intl.DateTimeFormat('pt-BR', {day: 'numeric', month:'long', year: 'numeric'}).format()
+}
+
 class App extends Component{
   constructor(props){
     super(props);
     this.state = {
         listaDesejos : [],
         nome : '',
-        date: ''
+        date: new Date()
     }
   };
+
+  
 
 buscarDesejos = () =>{
   // Faz a chamada para a api usando o fetch
@@ -39,7 +45,7 @@ cadastrarDesejos = (event) =>{
 
          // Define o corpo da requisição especificando o tipo (JSON)
          // Em outras palavras, converte o state para uma string JSON
-         body : JSON.stringify( {nomeDesejo : this.state.nome}),
+         body : JSON.stringify( {nomeDesejo : this.state.nome, dataCriacaoDesejo: this.state.date}),
 
          // Define o cabeçalho da requisição
          headers : {
@@ -102,6 +108,7 @@ atualizarEstadoDate = async (event) => {
           <tr key={desejo.idDesejo}></tr>
               <p className="texto">{desejo.idDesejo}</p>
               <p className="texto">{desejo.nomeDesejo}</p>
+              <p className="texto">{desejo.dataCriacaoDesejo}</p>
               </div>
            
             
@@ -124,7 +131,7 @@ atualizarEstadoDate = async (event) => {
           <h2 className="title"> Cadastro de Desejos</h2>
           {/* Form para os inputs email e desejo */}
           <form className="form">
-            <input type="text" value={this.state.date} onChange={this.atualizarEstadoDate}className="input" placeholder="Digite o seu email" />
+            <input type="text" value={DataFormatada(this.state.date)} onChange={this.atualizarEstadoDate}className="input" placeholder="Data" />
             <input type="text" className="input" value={this.state.nome} onChange={this.atualizarEstadoDescricao} placeholder="Digite seu desejo" />
             <button type="submit" className="btn" onClick={this.cadastrarDesejos}>Cadastrar</button>
           </form>
