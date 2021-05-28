@@ -7,6 +7,7 @@
     box-sizing: border-box;
 }
 
+
 :root{
     --background: #B08FF9;
     --section: #231459;
@@ -14,7 +15,6 @@
     --font: 'Amaranth', sans-serif;
 
 }
-
 
 .header{
     width: 100%;
@@ -25,22 +25,43 @@
 body{
     background-color: var(--background);
     height: 100%;
-
+    scrollbar-width: thin;          
+    scrollbar-color:#CBB7F8 #231459;
+    scrollbar-gutter:#231459;
+    scrollbar-arrow-color: hidden;
+    scroll-padding-right: 20px;
+    scroll-margin-block-start: 10px;
 }
 
 .ListaDesejos{
     display: flex;
     background-color: var(--section);
     width: 80%;
-    height: 80vh cover;
+    height: 80vh ;
     border-top-right-radius:30px;
     border-bottom-right-radius:30px;
     padding-bottom: 20px;
     justify-content: center;
     flex-wrap: wrap;
     box-shadow:#3E206D  0.5em -0.5em 0.5em 0.5em;
-
+    overflow-y:scroll;
 }
+
+.ListaDesejos::-webkit-scrollbar{
+    background-color:var(--section);
+    width: 15px;
+    
+}
+
+.ListaDesejos::-webkit-scrollbar-thumb{
+    background-color: var(--input);
+    border-radius: 30px;
+}
+
+.ListaDesejos::-webkit-scrollbar-button{
+    background-color:var(--section);
+}
+
 
 .box{
     display: flex;
@@ -56,24 +77,6 @@ body{
     text-align: center;
 }
 
-/* .boxes{
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    display: grid;
-    width: 300px;
-    height: 100px;
-
-} */
-/* .boxemaior{
-  
-  display: grid;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  width: 1000px;
-  height: 80vh;
-} */
 
 .title{
     color: var(--background);
