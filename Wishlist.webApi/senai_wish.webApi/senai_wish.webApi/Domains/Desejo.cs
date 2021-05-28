@@ -14,6 +14,7 @@ namespace senai_wish.webApi.Domains
         }
 
         public int IdDesejo { get; set; }
+        public int? idUsuario { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime dataCriacaoDesejo { get; set; }
